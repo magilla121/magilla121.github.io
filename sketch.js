@@ -1,8 +1,8 @@
 var gameReady = false;
 var timer = 5;
 var load = 0.5;//adjusts the starting health of the bots and the damage they do each hit
-var startHealth = 920;
-var damage = 30.66666666666667;
+var startHealth = 600;
+var damage = 30;
 //bot1 properties and functions
 var bot1 = {
   xPos:50,
@@ -58,7 +58,7 @@ function preload(){
 }
 function setup() {
   frameRate(60);
-  createCanvas(1200, 800);
+  createCanvas(900, 600);
 }
 
 function draw() {
@@ -138,5 +138,7 @@ function loading(){
 function end(bot){
   fill("white");
   textSize(50);
-  text(bot + " WINS!", width/2, height/2)
+  text(bot + " WINS!", width/2 - 100, height/2)
+  textSize(32);
+  text("Press (R) to reload", width/2 -100, height/2 +50);
 }
