@@ -14,7 +14,7 @@ var bot1 = {
   healthBar:function(){
     if(this.health <= 0){
       this.alive = false;
-      end("Blue Bot");
+      end("Red Bot");
     } else {
       this.alive = true;
     }
@@ -23,7 +23,7 @@ var bot1 = {
     rect(this.xPos + 220, this.yPos - 25, this.health, 30);
   } else{
     fill("red");
-    text("DEAD", this.xPos + 200, this.yPos);
+    text("DEAD", this.xPos + 250, this.yPos);
   }
   }
 }
@@ -38,7 +38,7 @@ var bot2 = {
   healthBar:function(){
     if(this.health <= 0){
       this.alive = false;
-      end("Red Bot");
+      end("Blue Bot");
     } else{
       this.alive = true;
     }
@@ -47,7 +47,7 @@ var bot2 = {
     rect(this.xPos + 220, this.yPos - 25, this.health, 30);
   } else{
     fill("red");
-    text("DEAD", this.xPos + 200, this.yPos)
+    text("DEAD", this.xPos + 250, this.yPos)
   }
   }
 }
@@ -92,6 +92,7 @@ function draw() {
   }
 } 
 function keyPressed(){
+  if(gameReady){
   if(keyCode == (32) && bot1.alive == true && bot2.alive == true){    
     bot1.score += 1;
     bot2.health -= damage;
@@ -116,6 +117,7 @@ function keyPressed(){
   if(keyCode == (82)){
     reset();
   }
+}
 }
 function reset(){
   bot1.score = 0;
