@@ -14,7 +14,7 @@ var bot1 = {
   healthBar:function(){
     if(this.health <= 0){
       this.alive = false;
-      end("Bot:2");
+      end("Blue Bot");
     } else {
       this.alive = true;
     }
@@ -38,7 +38,7 @@ var bot2 = {
   healthBar:function(){
     if(this.health <= 0){
       this.alive = false;
-      end("Bot:1");
+      end("Red Bot");
     } else{
       this.alive = true;
     }
@@ -74,8 +74,8 @@ function draw() {
   bot2.healthBar();
   fill("white");
   textSize(32);
-  text("Bot1 Health:", bot1.xPos, bot1.yPos);
-  text("Bot2 Health:",bot2.xPos, bot2.yPos);
+  text("Blue Bot Health:", bot1.xPos, bot1.yPos);
+  text("Red Bot Health:",bot2.xPos, bot2.yPos);
   } else{
     background("black");
     fill("white");
